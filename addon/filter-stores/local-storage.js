@@ -1,5 +1,4 @@
 /* global localStorage */
-import $ from 'jquery';
 
 import { on } from '@ember/object/evented';
 import BaseStore from './base';
@@ -89,7 +88,7 @@ export default BaseStore.extend({
   },
 
   _bindToStorageEvents() {
-    $(window).bind('storage', () => {
+    window.addEventListener('storage', () => {
       let data = this.restore();
       this._lastData = data;
       this.trigger('filterDataUpdated', data);

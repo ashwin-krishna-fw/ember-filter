@@ -55,7 +55,7 @@ export default Component.extend({
 
   actions: {
     customSearch: function(){
-      this.sendAction('action');
+      this.customSearch();
     }
   }
 });
