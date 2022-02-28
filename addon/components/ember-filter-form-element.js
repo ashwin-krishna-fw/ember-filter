@@ -8,13 +8,13 @@ export default Component.extend({
   layout: layout,
   classNames: ['filter-form-field'],
 
-  selectize: computed(function(){
+  powerSelect: computed(function(){
     var options = get(this, 'options');
-    return options.type === 'selectize';
+    return options.type === 'powerSelect';
   }),
   multiple: computed(function(){
     var options = get(this, 'options');
-    return options.type === 'selectize' && options.operator === 'is_in';
+    return options.type === 'powerSelect' && options.operator === 'is_in';
   }),
   dropdown: computed(function(){
     var options = get(this, 'options');

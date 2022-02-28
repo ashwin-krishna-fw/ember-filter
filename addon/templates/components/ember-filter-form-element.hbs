@@ -1,13 +1,20 @@
 {{options.label}}
-{{#if selectize}}
-  {{ember-selectize
-      content=choices
-      optionValuePath='content.id'
-      optionLabelPath='content.label'
-      selection=value
-      add-item='filterChanged'
-      remove-item='filterChanged'
-      multiple=multiple}}
+{{#if powerSelect}}
+  {{#if multiple}}
+    {{#power-select-multiple
+      options=choices
+      selected=value
+      onchange=(action "filterChanged") as |option|}}
+      {{option.label}}
+    {{/power-select-multiple}}
+  {{else}}
+    {{#power-select
+      options=choices
+      selected=value
+      onchange=(action "filterChanged") as |option|}}
+      {{option.label}}
+    {{/power-select}}
+  {{/if}}
 {{else if dropdown}}
   <select onchange={{action 'selectValue'}} multiple={{multiple}}>
     {{#each choices as |choice|}}

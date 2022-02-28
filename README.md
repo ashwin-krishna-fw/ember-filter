@@ -20,7 +20,7 @@ If you need to filter the People, lets define the filter as PeopleFilter with fi
 # to have custome element component, which will get filter as filter, options as filterOptions an key as FilterOptionKey(status)
 filterOptions: computed(function(){
   return {
-    status: { operator: 'is_in', type: 'selectize', label: 'People Status', visible: true },
+    status: { operator: 'is_in', type: 'powerSelect', label: 'People Status', visible: true },
     dropdown: { operator: 'is', type: 'dropdown', label: 'Custom dropdown', choices: computed(function(){
       return [
           { id: 1, name: "Choice one"},
