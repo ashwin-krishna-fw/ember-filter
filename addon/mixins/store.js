@@ -95,12 +95,12 @@ export default Mixin.create({
   _filter(typeClass, filterId, options){
     options = options || {};
     var adapter = this.adapterFor(typeClass.modelName);
-    var filterClass = this.filterFor(typeClass.modelName);
+    var filterClass = this.filterFor(options['filterModelName'] || typeClass.modelName);
     var queryHash = null;
     assert("You tried to filter all records but you have no adapter (for " + typeClass + ")", adapter);
     assert("You tried to filter all records but you have no filter (for " + typeClass + ")", filterClass);
     var filter = this.peekRecord(filterClass.modelName, filterId);
-    var filterContent = this.restoreFilter(typeClass.modelName);
+    var filterContent = this.restoreFilter(options['filterModelName'] || typeClass.modelName);
     if(filterContent && !!filterContent['query_hash'] && filterContent.id === filterId){
       queryHash = filterContent['query_hash'];
 
@@ -128,7 +128,7 @@ export default Mixin.create({
   */
   _filterAll(adapter, filterId, typeClass, query_hash, options){
     var modelName = typeClass.modelName;
-    var filterModelName = this.filterFor(modelName).modelName;
+    var filterModelName = this.filterFor(options['filterModelName'] || modelName).modelName;
 
     this.updateStore(filterId, filterModelName, query_hash);
 
