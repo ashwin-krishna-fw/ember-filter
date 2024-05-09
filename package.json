@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "ember-cli-babel": "^6.7.1",
+    "ember-cli-babel": "6.8.0",
     "ember-cli-htmlbars": "^1.1.1",
     "ember-data": "^2.16.3",
     "ember-bootstrap": "1.0.0-rc.2"
@@ -46,6 +46,9 @@
     "ember-source": "~2.13.0",
     "ember-welcome-page": "^3.0.0",
     "loader.js": "^4.2.3"
+  },
+  "resolutions": {
+    "ember-cli-babel": "6.8.0"
   },
   "engines": {
     "node": ">= 4"
