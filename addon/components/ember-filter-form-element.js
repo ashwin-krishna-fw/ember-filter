@@ -1,7 +1,7 @@
 import { camelize } from '@ember/string';
 import Component from '@ember/component';
 import { set, get, computed } from '@ember/object';
-import Ember from 'ember';
+import { pluralize } from 'ember-inflector';
 import layout from '../templates/components/ember-filter-form-element';
 
 export default Component.extend({
@@ -47,7 +47,7 @@ export default Component.extend({
     }
   }),
   contentMethod: function(key){
-    return Ember.String.pluralize(camelize(key));
+    return pluralize(camelize(key));
   },
   minDate: computed(function(){
     return new Date();
