@@ -55,8 +55,7 @@ export default Component.extend({
 
   actions: {
     customSearch: function(event){
-      console.log('Form submitted',event);
-      this.customSearch();
+      this.action();
     }
   }
 });
