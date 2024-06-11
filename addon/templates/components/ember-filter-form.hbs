@@ -2,7 +2,7 @@
     <form class="filter-form" {{action 'customSearch' on='submit'}}></form>
   <form class="filter-form" onsubmit={{action 'customSearch'}}></form>
   <form class="filter-form" {{on 'submit' this.customSearch}}  --}}
-<form class="filter-form" onsubmit={{action 'customSearch'}}></form>
+<form class="filter-form" onsubmit={{action 'customSearch'}}>
   {{#each-in visibleFilterOptions as |key value|}}
     {{#if value.componentTemplate}}
       {{component value.componentTemplate
